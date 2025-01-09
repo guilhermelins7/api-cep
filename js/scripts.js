@@ -4,6 +4,7 @@ const cep = document.getElementById("CEP");
 const pesquisar = document.getElementById("pesquisar");
 const estado = document.getElementById("estado");
 const localidade = document.getElementById("localidade");
+const logradouro = document.getElementById("logradouro");
 
 function getCep(cep) {
     return cep.value;
@@ -23,6 +24,7 @@ pesquisar.addEventListener("click", async () => {
 
         estado.textContent = `${dadosJSON.uf}`;
         localidade.textContent = `${dadosJSON.localidade}`;
+        logradouro.textContent = `${dadosJSON.logradouro}, ${dadosJSON.bairro}`
     }
     catch(erro) {   
         estado.textContent = "Falha ao buscar CEP."
