@@ -13,8 +13,8 @@ function getCep(cep) {
 pesquisar.addEventListener("click", async () => {
     try {
         // test:
-        // const resposta = await fetch(`https://viacep.com.br/ws/${getCep(cep)}/json/`);
-        const resposta = await fetch(`https://viacep.com.br/ws/11500260/json/`);
+        const resposta = await fetch(`https://viacep.com.br/ws/${getCep(cep)}/json/`);
+        // const resposta = await fetch(`https://viacep.com.br/ws/11500260/json/`);
 
 
         if (!resposta.ok) throw new erro();

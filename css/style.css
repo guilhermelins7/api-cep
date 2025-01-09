@@ -1,3 +1,12 @@
+.body {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    min-height: 100vh; /* Faz o corpo ocupar toda a altura da tela */
+    margin: 0;
+    background-color: #0A2F44; /* Fundo azul semelhante à imagem */
+}
+
 .consulta {
     display: flex;
     flex-direction: column;
@@ -6,10 +15,42 @@
     gap: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
+    box-shadow: 0 .4rem .5rem rgba(0, 0, 0, 0.1); /* sombra */
 }
 
 .consulta .caixa-consulta {
     display: flex;
     flex-direction: column;
     gap: .5rem;
+}
+
+.historico {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    justify-content: center;
+    max-width: 90%;
+}
+
+.historico .endereco {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    background-color: #f0f0f0;
+    border-radius: 1rem;
+    box-shadow: 0 .4rem .5rem rgba(0, 0, 0, 0.1); /* sombra */ 
+    padding: .1rem 1rem;
+}
+
+.historico .endereco h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffc107; /* Fundo amarelo */
+    color: #333; /* Cor do texto */
+    width: 5rem;
+    height: 5rem;
+    padding: .1rem 1rem;
+    border-radius: .4rem;
 }
