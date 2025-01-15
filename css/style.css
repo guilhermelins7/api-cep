@@ -1,3 +1,10 @@
+:root {
+    --main-color: #fcc107;
+    --centerText-color: #fff;
+    --background-color: #f0f0f0;
+    --border-color: #ccc;
+}
+
 .body {
     display: flex;
     justify-content: center; /* Centraliza horizontalmente */
@@ -13,7 +20,8 @@
     margin: 1rem;
     padding: 1rem;
     gap: 1rem;
-    border: 1px solid #ccc;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
     border-radius: 4px;
     box-shadow: 0 .4rem .5rem rgba(0, 0, 0, 0.1); /* sombra */
 }
@@ -22,6 +30,19 @@
     display: flex;
     flex-direction: column;
     gap: .5rem;
+}
+
+.consulta .pesquisar {
+    background-color: var(--main-color);
+    color: var(--centerText-color);
+    border: none;
+    padding: .5rem 1rem;
+    text-align: center; /* Texto centralizado */
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: .4rem; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de mão ao passar por cima */
+    transition: background-color 0.3s; /* Efeito de transição */
 }
 
 .historico {
@@ -43,7 +64,7 @@
     flex-direction: row;
     align-items: center;
     gap: 2rem;
-    background-color: #f0f0f0;
+    background-color: var(--background-color);
     border-radius: 1rem;
     box-shadow: 0 .4rem .5rem rgba(0, 0, 0, 0.1); /* sombra */ 
     padding: .1rem 1rem;
@@ -53,8 +74,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffc107; /* Fundo amarelo */
-    color: #333; /* Cor do texto */
+    background-color: var(--main-color); /* Fundo amarelo */
+    color: var(--centerText-color); /* Cor do texto */
+    border: 1px solid var(--border-color);
     width: 5rem;
     height: 5rem;
     padding: .1rem 1rem;
