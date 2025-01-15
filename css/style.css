@@ -32,7 +32,13 @@
     max-width: 90%;
 }
 
-.historico .endereco {
+.historico .historico-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.historico .historico-lista .endereco {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -43,7 +49,7 @@
     padding: .1rem 1rem;
 }
 
-.historico .endereco h2 {
+.historico .historico-lista .endereco h2 {
     display: flex;
     justify-content: center;
     align-items: center;
