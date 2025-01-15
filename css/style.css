@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
 :root {
     --main-color: #fcc107;
     --centerText-color: #fff;
@@ -5,13 +7,8 @@
     --border-color: #ccc;
 }
 
-.body {
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    min-height: 100vh; /* Faz o corpo ocupar toda a altura da tela */
-    margin: 0;
-    background-color: #0A2F44; /* Fundo azul semelhante à imagem */
+body {
+    font-family: 'Roboto', sans-serif;
 }
 
 .consulta {
