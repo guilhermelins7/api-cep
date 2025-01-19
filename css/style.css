@@ -12,10 +12,10 @@ body {
 }
 
 /* retirar espaçamento: */
-/* p, h2, h3 {
+* {
     margin: 0rem;
     padding: 0rem;
-} */
+}
 
 .consulta {
     display: flex;
@@ -51,9 +51,23 @@ body {
 .historico {
     display: flex;
     flex-direction: column;
-    justify-self: center;
     justify-content: center;
-    max-width: 90%;
+    align-items: center;
+    width: 100%;
+}
+
+.historico .historico-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 90%;
+}
+
+.historico .historico-h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    align-self: self-start;
 }
 
 .historico .historico-lista {
@@ -66,11 +80,11 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 2rem;
     background-color: var(--background-color);
     border-radius: 1rem;
     box-shadow: 0 .4rem .5rem rgba(0, 0, 0, 0.1); /* sombra */ 
-    padding: .1rem 1rem;
+    gap: 1rem;
+    padding: .7rem;
 }
 
 .historico .historico-lista .endereco h2 {
@@ -80,20 +94,20 @@ body {
     background-color: var(--main-color); /* Fundo amarelo */
     color: var(--centerText-color); /* Cor do texto */
     border: 1px solid var(--border-color);
-    width: 5rem;
-    height: 5rem;
-    padding: .1rem 1rem;
+    padding: 1.7rem;
     border-radius: .4rem;
 }
 
 .historico .historico-lista .endereco .detalhes {
     display: flex;   
     flex-direction: column;
+    gap: .5rem;
 }
 
 .historico .historico-lista .endereco .detalhes .dados {
     display: flex;
     flex-direction: column;
+    gap: .5rem;
 }
 
 .historico .historico-lista .endereco .box-footer {
