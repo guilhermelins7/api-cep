@@ -22,17 +22,28 @@ pesquisar.addEventListener("click", async () => {
         
         // Criar novo componente:
         const novoEndereco = document.createElement("div");
+        // Adicionar classe:
         novoEndereco.classList.add("endereco");
         novoEndereco.innerHTML = `
             <h2 class="estado">${dadosJSON.uf}</h2>
             <div class="detalhes">
-                <div>
+                <div class="dados">
                     <h3 class="localidade">${dadosJSON.localidade}</h3>
                     <p class="logradoura">${dadosJSON.logradouro}, ${dadosJSON.bairro}</p>
                 </div>
-                <p class="cep-buscado">CEP: ${getCep(cep)}</p>
+                <div class="box-footer">
+                    <p class="cep-buscado">CEP: ${getCep(cep)}</p>
+                    <button class="remover">X</button>
+                </div>
             </div>
         `;
+
+        // Remover item de pesquisa (botão X):
+        const btnRemover = novoEndereco.querySelector(".remover");
+        
+        btnRemover.addEventListener("click", () => {
+            novoEndereco.remove();
+        })
 
         historicoLista.appendChild(novoEndereco);
     }

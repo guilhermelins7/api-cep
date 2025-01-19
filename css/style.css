@@ -11,6 +11,12 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+/* retirar espaçamento: */
+/* p, h2, h3 {
+    margin: 0rem;
+    padding: 0rem;
+} */
+
 .consulta {
     display: flex;
     flex-direction: column;
@@ -78,4 +84,27 @@ body {
     height: 5rem;
     padding: .1rem 1rem;
     border-radius: .4rem;
+}
+
+.historico .historico-lista .endereco .detalhes {
+    display: flex;   
+    flex-direction: column;
+}
+
+.historico .historico-lista .endereco .detalhes .dados {
+    display: flex;
+    flex-direction: column;
+}
+
+.historico .historico-lista .endereco .box-footer {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
+.historico .historico-lista .endereco .remover {
+    height: 1.6rem;
+    width: 1.6rem;
+    text-align: center;
 }
