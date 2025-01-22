@@ -8,6 +8,34 @@ function getCep(cep) {
     return cep.value;
 }
 
+function criarComponenteEndereco(dadosJSON) {
+    const endereco = document.createElement("div");
+    // Adicionar classe:
+    endereco.classList.add("endereco");
+    endereco.innerHTML = `
+        <h2 class="estado">${dadosJSON.uf}</h2>
+        <div class="detalhes">
+            <div class="dados">
+                <h3 class="localidade">${dadosJSON.localidade}</h3>
+                <p class="logradoura">${dadosJSON.logradouro}, ${dadosJSON.bairro}</p>
+            </div>
+            <div class="box-footer">
+                <p class="cep-buscado">CEP: ${getCep(cep)}</p>
+                <button class="remover">X</button>
+            </div>
+        </div>
+    `;
+
+    // Remover item de pesquisa (botão X):
+    const btnRemover = endereco.querySelector(".remover");
+    
+    btnRemover.addEventListener("click", () => {
+        endereco.remove();
+    })
+
+    return endereco;
+}
+
 pesquisar.addEventListener("click", async () => {
     try {
         // test:
@@ -19,32 +47,9 @@ pesquisar.addEventListener("click", async () => {
 
         // Desserialização JSON
         const dadosJSON = await resposta.json();
-        
+
         // Criar novo componente:
-        const novoEndereco = document.createElement("div");
-        // Adicionar classe:
-        novoEndereco.classList.add("endereco");
-        novoEndereco.innerHTML = `
-            <h2 class="estado">${dadosJSON.uf}</h2>
-            <div class="detalhes">
-                <div class="dados">
-                    <h3 class="localidade">${dadosJSON.localidade}</h3>
-                    <p class="logradoura">${dadosJSON.logradouro}, ${dadosJSON.bairro}</p>
-                </div>
-                <div class="box-footer">
-                    <p class="cep-buscado">CEP: ${getCep(cep)}</p>
-                    <button class="remover">X</button>
-                </div>
-            </div>
-        `;
-
-        // Remover item de pesquisa (botão X):
-        const btnRemover = novoEndereco.querySelector(".remover");
-        
-        btnRemover.addEventListener("click", () => {
-            novoEndereco.remove();
-        })
-
+        const novoEndereco = criarComponenteEndereco(dadosJSON);
         historicoLista.appendChild(novoEndereco);
     }
     catch(erro) {   
