@@ -2,7 +2,7 @@
 
 :root {
     --main-color: #fcc107;
-    --centerText-color: #fff;
+    --centerText-color: #eff;
     --background-color: #f0f0f0;
     --border-color: #ccc;
     --blackText-color: #111;
@@ -19,13 +19,27 @@ body {
     padding: 0rem;
 }
 
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    max-width: 100%;
+    background-color: var(--main-color);
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: var(--centerText-color);
+}
+
 .consulta {
     display: flex;
     flex-direction: column;
     margin: 1rem;
     padding: 1rem;
     gap: 1rem;
-    background-color: var(--background-color);
+    background-color: var(--centerText-color);
     border: 1px solid var(--border-color);
     border-radius: 4px;
     box-shadow: 0 .4rem .5rem rgba(0, 0, 0, 0.1); /* sombra */
@@ -53,7 +67,7 @@ body {
 .consulta .caixa-consulta .cep:focus {
     border-color: #007bff; /* Cor da borda ao focar */
     outline: none; /* Remove o contorno padrão */
-    background-color: var(--background-color); /* Cor de fundo ao focar */
+    background-color: var(--centerText-color); /* Cor de fundo ao focar */
 }
 
 .consulta .pesquisar {
@@ -101,7 +115,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: var(--background-color);
+    background-color: var(--centerText-color);
     border-radius: 1rem;
     box-shadow: 0 .4rem .5rem rgba(0, 0, 0, 0.1); /* sombra */ 
     gap: 1rem;
