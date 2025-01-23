@@ -8,6 +8,10 @@ function getCep(cep) {
     return cep.value;
 }
 
+function consultarCep(cep) {
+    return `https://viacep.com.br/ws/${cep}/json/`;
+}
+
 function criarComponenteEndereco(dadosJSON) {
     const endereco = document.createElement("div");
     // Adicionar classe:
@@ -38,21 +42,20 @@ function criarComponenteEndereco(dadosJSON) {
 
 pesquisar.addEventListener("click", async () => {
     try {
-        // test:
-        const resposta = await fetch(`https://viacep.com.br/ws/${getCep(cep)}/json/`);
-        // const resposta = await fetch(`https://viacep.com.br/ws/11500260/json/`);
-
-
-        if (!resposta.ok) throw new Error("Falha ao buscar CEP");
+        const resposta = await fetch(consultarCep(getCep(cep)));
 
         // Desserialização JSON
         const dadosJSON = await resposta.json();
+
+        if(dadosJSON.erro) throw new Error("CEP buscado não existe.");
 
         // Criar novo componente:
         const novoEndereco = criarComponenteEndereco(dadosJSON);
         historicoLista.appendChild(novoEndereco);
     }
-    catch(erro) {   
-        alert(`Erro: ${erro.message}`);
+    catch(err) {
+        // Tratar o Failed to Fetch:
+        if (err.message === "Failed to fetch") alert("Erro: tamanho de CEP Inválido.");
+        else alert(`Erro: ${err.message}`);
     }
 })
