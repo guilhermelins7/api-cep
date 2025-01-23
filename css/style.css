@@ -91,6 +91,7 @@ header h1 {
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin-bottom: 1.5rem;
 }
 
 .historico .historico-container {
@@ -187,6 +188,18 @@ header h1 {
         font-size: 2rem;
     }
 
+    .consulta {
+        display: flex;
+        width: 80%;
+        align-self: center;
+        justify-self: center;
+        text-align: center;
+    }
+
+    .historico-container {
+        max-width: 85%;
+    }
+
     .consulta .caixa-consulta label {
         font-size: 1.4rem;
     }
@@ -226,5 +239,56 @@ header h1 {
         width: 1.8rem;
         height: 1.8rem;
         font-size: 1.2rem;
+    }
+}
+
+/* Large (lg): desktops */
+@media (min-width: 1025px) {
+
+    .consulta {
+        width: 60%;
+    }
+
+    .historico-container {
+        max-width: 60%;
+    }
+
+    .consulta .caixa-consulta label {
+        font-size: 1.8rem;
+    }
+
+    .consulta .caixa-consulta .cep {
+        height: 2.4rem;
+        font-size: 1.6rem;
+    }
+
+    .consulta .pesquisar {
+        padding: .9rem 1rem;
+        font-size: 1.6rem;
+    }
+
+    .historico .historico-h2 {
+        font-size: 1.8rem;
+        margin: 1.7rem 1rem;
+    }
+
+    .historico .historico-lista .endereco h2 {
+        padding: 2.2rem;
+        font-size: 2.2rem;
+    }
+
+    .historico .historico-lista .endereco .detalhes .dados .localidade {
+        font-size: 1.7rem;
+    }
+
+    .historico .historico-lista .endereco .detalhes .dados .logradoura,
+    .historico .historico-container .historico-lista .box-footer .cep-buscado {
+        font-size: 1.5rem;
+    }
+
+    .historico .historico-container .historico-lista .endereco .remover {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.4rem;
     }
 }
