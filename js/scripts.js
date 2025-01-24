@@ -5,7 +5,9 @@ const pesquisar = document.getElementById("pesquisar");
 const historicoLista = document.getElementById("historico-lista");
 
 function getCep(cep) {
-    return cep.value;
+    const value = cep.value;
+    cep.value = "";
+    return value;
 }
 
 function consultarCep(cep) {
@@ -24,7 +26,7 @@ function criarComponenteEndereco(dadosJSON) {
                 <p class="logradoura">${dadosJSON.logradouro}, ${dadosJSON.bairro}</p>
             </div>
             <div class="box-footer">
-                <p class="cep-buscado">CEP: ${getCep(cep)}</p>
+                <p class="cep-buscado">CEP: ${dadosJSON.cep}</p>
                 <button class="remover">X</button>
             </div>
         </div>
